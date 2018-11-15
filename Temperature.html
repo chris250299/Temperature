@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Temperature</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    function Temperature(celsius, fahrenheit, kelvin) {
+        this.Celsius = celsius;
+        this.Fahrenheit = fahrenheit;
+        this.Kelvin = kelvin;
+        if (this.Celsius < -273) alert("Không tồn tại độ C");
+        else {
+            this.convertCF = function () {
+                return this.Fahrenheit = (this.Celsius * 1.8) + 32;
+            }
+            this.convertCK = function () {
+                return this.Kelvin = this.Celsius + 273.15;
+            }
+        }
+    }
+    var myTemperature = new Temperature(25);
+    var convertCF = myTemperature.convertCF();
+    document.write("25 độ C bằng: " +convertCF+ " độ F" + "</br>");
+    var convertCK = myTemperature.convertCK();
+    document.write("25 độ C bằng: " +convertCK+ " độ K");
+</script>
+</body>
+</html>
